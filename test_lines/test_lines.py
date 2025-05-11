@@ -1,8 +1,7 @@
 import os
 import pytest
-import sys
 import tempfile  # For creating temporary test files
-from lines import count_lines_of_code, main
+from lines import count_lines_of_code
 
 
 def test_count_lines_of_code_only_code():
@@ -27,3 +26,8 @@ def test_count_lines_of_code_with_commments_and_blank_lines():
     assert count_lines_of_code(temp_name) == 2
 
     os.remove(temp_name)
+
+
+def test_count_lines_of_code_file_not_found():
+    with pytest.raises(FileNotFoundError):
+        count_lines_of_code("no_such_file.py")
