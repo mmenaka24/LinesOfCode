@@ -1,16 +1,14 @@
 import sys
 
 def count_lines_of_code(filename):
-    with open(filename) as f:
-        lines = f.readlines()
-    
     line_count = 0
 
-    for line in lines:
-        stripped_line = line.strip()
-        if not (stripped_line == '' or stripped_line.startswith('#')):
-            line_count += 1
-    
+    with open(filename) as f:
+        for line in f:
+            stripped_line = line.strip()
+            if not (stripped_line == '' or stripped_line.startswith('#')):
+                line_count += 1
+        
     return line_count
 
 def main():
