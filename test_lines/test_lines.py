@@ -30,4 +30,4 @@ def test_count_lines_of_code_with_commments_and_blank_lines():
 
 def test_count_lines_of_code_file_not_found():
     with pytest.raises(FileNotFoundError):
-        count_lines_of_code("no_such_file.py")
+        count_lines_of_code("non_existent_file.py")
