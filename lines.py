@@ -1,15 +1,17 @@
 import sys
 
+
 def count_lines_of_code(filename):
     line_count = 0
 
     with open(filename) as f:
         for line in f:
             stripped_line = line.strip()
-            if not (stripped_line == '' or stripped_line.startswith('#')):
+            if not (stripped_line == "" or stripped_line.startswith("#")):
                 line_count += 1
-        
+
     return line_count
+
 
 def main():
     if len(sys.argv) < 2:
@@ -28,6 +30,6 @@ def main():
     except FileNotFoundError:
         sys.exit("File does not exist")
 
+
 if __name__ == "__main__":
     main()
-    
